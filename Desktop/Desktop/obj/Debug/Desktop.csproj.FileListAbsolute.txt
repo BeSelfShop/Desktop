@@ -25,3 +25,7 @@ D:\Desktop\Desktop\Desktop\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\Desktop\Desktop\Desktop\obj\Debug\App.baml
 D:\Desktop\Desktop\Desktop\obj\Debug\Views\ShellView.g.cs
 D:\Desktop\Desktop\Desktop\obj\Debug\Views\ShellView.baml
+D:\Desktop\Desktop\Desktop\obj\Debug\Views\LoginView.g.cs
+D:\Desktop\Desktop\Desktop\obj\Debug\Views\LoginView.baml
+D:\Desktop\Desktop\Desktop\obj\Debug\Views\RegistrationView.g.cs
+D:\Desktop\Desktop\Desktop\obj\Debug\Views\RegistrationView.baml

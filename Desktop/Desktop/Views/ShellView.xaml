@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:Desktop.Views"
         mc:Ignorable="d"
         Title="ShellViews" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="AliceBlue">
+            <MenuItem x:Name="LogOut" Header="_LogOut"></MenuItem>
+        </Menu>
+        <ContentControl x:Name="ActiveItem"/>
+    </DockPanel>
 </Window>
