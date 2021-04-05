@@ -1,4 +1,5 @@
 ﻿using Desktop.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -42,8 +43,19 @@ namespace Desktop.Hepler
             {
                 if (responseMessage.IsSuccessStatusCode)
                 {
-                    var result = await responseMessage.Content.ReadAsAsync<UserAccess>();
-                    return  result;
+                    try
+                    {
+                        
+                        var result = await responseMessage.Content.ReadAsAsync<UserAccess>();
+
+                        return result;
+                    }
+                    catch(Exception e)
+                    {
+                        var gds = e.Message;
+                        return null;
+                    }
+                    
                 }
                 else
                 {
