@@ -39,6 +39,7 @@ namespace Desktop.Hepler
                 new KeyValuePair<string, string>("password", password)
 
             });
+
             using(HttpResponseMessage responseMessage = await apiClient.PostAsync("api/Authentication/login", data))
             {
                 if (responseMessage.IsSuccessStatusCode)

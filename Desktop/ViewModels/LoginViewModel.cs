@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Desktop.Helper;
 using Desktop.Hepler;
+using Desktop.EventModels;
 
 namespace Desktop.ViewModels
 {
@@ -13,11 +14,13 @@ namespace Desktop.ViewModels
     {
         private string _userName = "";
         private string _password = "";
-        private IApiHelper _apiHelper; 
+        private IApiHelper _apiHelper;
+        private IEventAggregator _eventAggregator;
 
-        public LoginViewModel(IApiHelper apiHelper)
+        public LoginViewModel(IApiHelper apiHelper, IEventAggregator eventAggregator)
         {
             _apiHelper = apiHelper;
+            _eventAggregator = eventAggregator;
         }
 
         public string UserName
@@ -50,6 +53,7 @@ namespace Desktop.ViewModels
             get
             {
                 bool output = false;
+
                 if ((UserName.Length > 0) && (Password.Length > 0))
                 {
                     output = true;
@@ -63,9 +67,19 @@ namespace Desktop.ViewModels
 
         public async Task Login()
         {
-            var result = await _apiHelper.Authenticate(UserName, Password);
-            var zzz = result;
+            try
+            {
+
+                var result = await _apiHelper.Authenticate(UserName, Password);
+                _eventAggregator.PublishOnUIThread(new LogOnEventModel());
+
+            }catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
         }
+            
         
      }
 }

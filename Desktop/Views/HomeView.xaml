@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Desktop.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Desktop.Views"
+             mc:Ignorable="d"  Background="White"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Button x:Name="CelType" Grid.Row="0" Grid.Column="0">Rodzaje cel</Button>
+
+        <Button x:Name="Isolation" Grid.Row="1" Grid.Column="0">Izolacja</Button>
+
+        <Button x:Name="Reason" Grid.Row="2" Grid.Column="0">Powód skazania</Button>
+                
+        <Button x:Name="Pass" Grid.Row="0" Grid.Column="1">Przepustki</Button>
+                
+        <Button x:Name="PCells" Grid.Row="1" Grid.Column="1">Cele</Button>
+                
+        <Button x:Name="Prisoner" Grid.Row="2" Grid.Column="1">Więźniowie</Button>
+                
+        <Button x:Name="Punishment" Grid.Row="0" Grid.Column="2">Kara</Button>
+
+        <Button x:Name="Logger" Grid.Row="1" Grid.Column="2">Logi aplikacji</Button>
+
+        <Button x:Name="Register" Grid.Row="2" Grid.Column="2">Rejestracja</Button>
+
+
+    </Grid>
+</UserControl>

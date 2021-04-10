@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Repos\Desktop\Desktop\obj\Debug\
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\
 Desktop
 none
 false
 DEBUG;TRACE
-C:\Repos\Desktop\Desktop\App.xaml
-374289963
+D:\KurortWiezienny\Desktop\Desktop\App.xaml
+41884608714
 
-16670340237
-124319208102
-Views\LoginView.xaml;Views\RegistrationView.xaml;Views\ShellView.xaml;
+19-196307902
+124655027610
+Views\HomeView.xaml;Views\LoginView.xaml;Views\RegistrationView.xaml;Views\ShellView.xaml;
 
 True
 
