@@ -9,25 +9,33 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desktop.Hepler
+namespace Desktop.Api
 {
     public class ApiHelper : IApiHelper
     {
-        private HttpClient apiClient;
+        private HttpClient _apiClient;
 
         public ApiHelper()
         {
             InitializeClient();
         }
 
+        public HttpClient ApiClient
+        {
+            get
+            {
+                return _apiClient;
+            }
+        }
+
         private void InitializeClient()
         {
             string api = ConfigurationManager.AppSettings["api"];
 
-            apiClient = new HttpClient();
-            apiClient.BaseAddress = new Uri(api);
-            apiClient.DefaultRequestHeaders.Accept.Clear();
-            apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            _apiClient = new HttpClient();
+            _apiClient.BaseAddress = new Uri(api);
+            _apiClient.DefaultRequestHeaders.Accept.Clear();
+            _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public async Task<UserAccess> Authenticate(string username, string password)
@@ -40,7 +48,7 @@ namespace Desktop.Hepler
 
             });
 
-            using(HttpResponseMessage responseMessage = await apiClient.PostAsync("api/Authentication/login", data))
+            using(HttpResponseMessage responseMessage = await _apiClient.PostAsync("api/Authentication/login", data))
             {
                 if (responseMessage.IsSuccessStatusCode)
                 {
@@ -64,6 +72,15 @@ namespace Desktop.Hepler
                 }
 
             }
+           
+        }
+        public  void Authorized(string token)
+        {
+            _apiClient.DefaultRequestHeaders.Clear();
+            _apiClient.DefaultRequestHeaders.Accept.Clear();           
+            _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            _apiClient.DefaultRequestHeaders.Add("Authorization", $"Bearer { token }");
+
         }
     }
 }

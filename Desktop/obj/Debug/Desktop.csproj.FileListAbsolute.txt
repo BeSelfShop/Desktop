@@ -97,3 +97,7 @@ C:\Repos\Desktop\Desktop\obj\Debug\Desktop.csproj.CoreCompileInputs.cache
 C:\Repos\Desktop\Desktop\obj\Debug\Desktop.csproj.CopyComplete
 C:\Repos\Desktop\Desktop\obj\Debug\Desktop.exe
 C:\Repos\Desktop\Desktop\obj\Debug\Desktop.pdb
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\HomeView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PassView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\HomeView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PassView.baml

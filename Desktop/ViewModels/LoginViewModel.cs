@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Desktop.Helper;
-using Desktop.Hepler;
+using Desktop.Api;
 using Desktop.EventModels;
 
 namespace Desktop.ViewModels
@@ -71,6 +71,7 @@ namespace Desktop.ViewModels
             {
 
                 var result = await _apiHelper.Authenticate(UserName, Password);
+                _apiHelper.Authorized(result.token);
                 _eventAggregator.PublishOnUIThread(new LogOnEventModel());
 
             }catch (Exception e)

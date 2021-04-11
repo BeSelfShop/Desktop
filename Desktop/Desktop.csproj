@@ -74,13 +74,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Api\IPassEndpoint.cs" />
+    <Compile Include="Api\PassEndpoint.cs" />
     <Compile Include="EventModels\LogOnEventModel.cs" />
-    <Compile Include="Hepler\ApiHelper.cs" />
-    <Compile Include="Hepler\IApiHelper.cs" />
+    <Compile Include="Api\ApiHelper.cs" />
+    <Compile Include="Api\IApiHelper.cs" />
     <Compile Include="Hepler\PasswordBoxHelper.cs" />
+    <Compile Include="Model\Pass.cs" />
     <Compile Include="Model\UserAccess.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\PassViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="App.xaml.cs">
@@ -92,6 +96,9 @@
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PassView.xaml.cs">
+      <DependentUpon>PassView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RegistrationView.xaml.cs">
       <DependentUpon>RegistrationView.xaml</DependentUpon>
@@ -135,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PassView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

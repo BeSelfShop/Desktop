@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\KurortWiezienny\Desktop\Desktop\App.xaml
-374289963
+5636436691
 
-16-332360515
+23-662720577
 124655027610
-Views\LoginView.xaml;Views\RegistrationView.xaml;Views\ShellView.xaml;
+Views\HomeView.xaml;Views\LoginView.xaml;Views\PassView.xaml;Views\RegistrationView.xaml;Views\ShellView.xaml;
 
 False
 
