@@ -101,3 +101,7 @@ D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\HomeView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PassView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\HomeView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PassView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PrisonerView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PrisonerView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPrisonerView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPrisonerView.baml

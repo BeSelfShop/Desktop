@@ -8,9 +8,9 @@ namespace Desktop.Model
 {
     public class UserAccess
     {
-        public string token { get; set; }
-        public string expiration { get; set; }
-        public string roles { get; set; }
+        public string Token { get; set; }
+        public string Expiration { get; set; }
+        public string Roles { get; set; }
         
     }
 }

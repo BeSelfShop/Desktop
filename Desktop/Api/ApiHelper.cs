@@ -40,6 +40,7 @@ namespace Desktop.Api
 
         public async Task<UserAccess> Authenticate(string username, string password)
         {
+          
             var data = new FormUrlEncodedContent(new[]
             {
                 new KeyValuePair<string, string>("grant_type", password),
@@ -48,7 +49,7 @@ namespace Desktop.Api
 
             });
 
-            using(HttpResponseMessage responseMessage = await _apiClient.PostAsync("api/Authentication/login", data))
+            using (HttpResponseMessage responseMessage = await _apiClient.PostAsync("api/Authentication/login", data))
             {
                 if (responseMessage.IsSuccessStatusCode)
                 {

@@ -3,34 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using Caliburn.Micro;
 using Desktop.EventModels;
+using Desktop.Views;
 
 namespace Desktop.ViewModels
 {
-    public class ShellViewModel : Conductor<object> , IHandle<LogOnEventModel>
+    public class ShellViewModel : Conductor<object>, IHandle<LogOnEventModel>, IHandle<NextPageEventModel>
     {
         //private LoginViewModel _loginViewModel;
         private IEventAggregator _eventAggregator;
         private SimpleContainer _simpleContainer;
-        private RegistrationViewModel _shellViewModel;
-        private PassViewModel _passViewModel;
+        private HomeViewModel _homeViewModel;
 
-        public ShellViewModel( RegistrationViewModel shellViewModel , IEventAggregator eventAggregator
-            , SimpleContainer simpleContainer, PassViewModel passViewModel)
+
+
+
+        public ShellViewModel( IEventAggregator eventAggregator, SimpleContainer simpleContainer, HomeViewModel homeViewModel)
         {
             _eventAggregator = eventAggregator;
             _simpleContainer = simpleContainer;
-            _shellViewModel = shellViewModel;
-            _passViewModel = passViewModel;
-            //_loginViewModel = loginViewModel;
             _eventAggregator.Subscribe(this);
-            ActivateItem(_simpleContainer.GetInstance<LoginViewModel>());                                                               
+            ActivateItem(_simpleContainer.GetInstance<LoginViewModel>());
+            _homeViewModel = homeViewModel;
+            
+             
         }
 
         public void Handle(LogOnEventModel message)
         {
-            ActivateItem(_passViewModel);
+            
+                ActivateItem(_homeViewModel);           
+        }
+
+        
+
+        public void Handle(NextPageEventModel nextPage)
+        {
+            var instance = IoC.GetInstance(nextPage._ViewModelType, null);//Or just create viewModel by type
+            ActivateItem(instance);
+
         }
     }
 }

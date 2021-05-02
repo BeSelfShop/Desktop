@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using Desktop.Api;
+using Desktop.EventModels;
 using Desktop.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,9 @@ namespace Desktop
         protected override void Configure()
         {
             _container.Instance(_container)
-                .PerRequest<IPassEndpoint, PassEndpoint>();
+                .PerRequest<IPassEndpoint, PassEndpoint>()
+                .PerRequest<IPrisonerEndpoint, PrisonerEndpoint>();
+
 
             _container
                 .Singleton<IWindowManager, WindowManager>()

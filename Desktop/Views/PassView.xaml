@@ -26,10 +26,14 @@
         <TextBlock  Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontStyle="Italic" FontSize="20"  >
             Przepustki
         </TextBlock>
-        <ListBox x:Name="AllPass" Grid.Row="1" Grid.Column="0" MinHeight="150" MinWidth="200">
+        <ListBox x:Name="AllPass" Grid.Row="1" Grid.Column="0" MinHeight="150" MinWidth="200" ItemsSource="{Binding AllPass}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding IdPrisoner}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=IdPrisoner}" />
+                        <TextBlock Text="{ Binding Path=StartDate}" />
+                        <TextBlock Text="{ Binding Path=EndDate}" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

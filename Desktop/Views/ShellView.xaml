@@ -9,6 +9,8 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="AliceBlue">
             <MenuItem x:Name="LogOut" Header="_LogOut"></MenuItem>
+            <MenuItem x:Name="Prisoner" Header="Więźniowie"></MenuItem>
+            <MenuItem x:Name="Pass" Header="Przepustka"></MenuItem>
         </Menu>
         <ContentControl x:Name="ActiveItem"/>
     </DockPanel>
