@@ -1,8 +1,10 @@
 ﻿using Caliburn.Micro;
 using Desktop.Api;
+using Desktop.EventModels;
 using Desktop.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,34 +14,37 @@ namespace Desktop.ViewModels
 {
     public class AddPrisonerViewModel : Screen
     {
+        private IEventAggregator _eventAggregator;
         private IPrisonerEndpoint _prisonerEndpoint;
-        private Prisoner _Prisoner;
+        private ICellEndpoint _cellEndpoint;
+        private BindingList<Cell> _cells;
         private string _name;
         private string _forname;
         private string _pesel;
         private string _addres;
-        private bool _pass;
         private int _behavior;
-        private bool _isolated;
-        private int _idCell;
+        private Cell _cell;
 
         Button button = new Button();
 
 
-        public AddPrisonerViewModel(IPrisonerEndpoint prisonerEndpoint)
+        public AddPrisonerViewModel(IEventAggregator eventAggregator,IPrisonerEndpoint prisonerEndpoint, ICellEndpoint cellEndpoint)
         {
+            _eventAggregator = eventAggregator;
             _prisonerEndpoint = prisonerEndpoint;
+            _cellEndpoint = cellEndpoint;
         }
 
-        private async Task LoadPrisoners()
+        private async Task Load()
         {
-            var prisonersList = await _prisonerEndpoint.AllPrisoner();
+            var cellList = await _cellEndpoint.AllCell();
+            Cells = new BindingList<Cell>(cellList);
         }
 
         protected override async void OnViewLoaded(object view)
         {
             base.OnViewLoaded(view);
-            await LoadPrisoners();
+            await Load();
         }
 
 
@@ -90,18 +95,6 @@ namespace Desktop.ViewModels
 
         }
 
-        public bool Pass
-        {
-            get { return _pass; }
-            set
-            {
-                _pass = value;
-                NotifyOfPropertyChange(() => Pass);
-
-            }
-
-        }
-
         public int Behavior
         {
             get { return _behavior; }
@@ -114,28 +107,43 @@ namespace Desktop.ViewModels
 
         }
 
-        public bool Isolated
+        public BindingList<Cell> Cells
         {
-            get { return _isolated; }
+            get { return _cells; }
             set
             {
-                _isolated = value;
-                NotifyOfPropertyChange(() => Isolated);
+                _cells = value;
+                NotifyOfPropertyChange(() => Cells);
 
             }
 
         }
 
-        public int IdCell
+        public Cell SelectedCell
         {
-            get { return _idCell; }
+            get { return _cell; }
             set
             {
-                _idCell = value;
-                NotifyOfPropertyChange(() => IdCell);
+                _cell = value;
+                NotifyOfPropertyChange(() => SelectedCell);
 
             }
+        }
 
+
+        public void AddPrisoner()
+        {
+            Prisoner prisoner = new Prisoner();
+            prisoner.Name = Name;
+            prisoner.Forname = Forname;
+            prisoner.Pesel = Pesel;
+            prisoner.Address = Addres;
+            prisoner.Pass = false;
+            prisoner.Behavior = Behavior;
+            prisoner.Isolated = false;
+            prisoner.IdCell = SelectedCell.Id;
+            _prisonerEndpoint.AddPrisoner(prisoner);
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(PrisonerViewModel)));
         }
     }
 }

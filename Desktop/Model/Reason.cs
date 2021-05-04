@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Desktop.Model
 {
-    class Reason
+    public class Reason
     {
         public int Id { get; set; }
         public string ReasonName { get; set; }

@@ -19,10 +19,6 @@ namespace Desktop.ViewModels
         private IEventAggregator _eventAggregator;
         private IPrisonerEndpoint _prisonerEndpoint;
         private BindingList<Prisoner> _allPrisoner;
-        private int _id;
-        private string _name;
-        private string _forname;
-        Button button = new Button();
 
 
         public PrisonerViewModel(IPrisonerEndpoint prisonerEndpoint, IEventAggregator eventAggregator)
@@ -50,41 +46,6 @@ namespace Desktop.ViewModels
             {
                 _allPrisoner = value;
                 NotifyOfPropertyChange(() => AllPrisoner);               
-            }
-        }
-
-
-        public int Id
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                NotifyOfPropertyChange(() => Id);
-
-            }
-
-        }
-
-
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                _name = value;
-                NotifyOfPropertyChange(() => Name);
-            }
-
-        }
-
-        public string Forname
-        {
-            get { return _forname; }
-            set
-            {
-                _forname = value;
-                NotifyOfPropertyChange(() => Forname);
             }
         }
 

@@ -34,7 +34,7 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Path=Name}" Width="Auto" />
-                        <TextBlock Text="{ Binding Path=Forname}" Width="Auto"/>
+                        <TextBlock Text="{ Binding Path=Forname}" Margin="20 0 " Width="Auto"/>
                         <Button  Content ="Usuń" cal:Message.Attach="DeletePrisoner($dataContext)"/>
                         <Button  Content ="Szczegóły" cal:Message.Attach="DetailsOfThePrisoner($dataContext)"/>
                     </StackPanel>

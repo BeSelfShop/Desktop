@@ -41,7 +41,7 @@ namespace Desktop.ViewModels
 
         public void Handle(NextPageEventModel nextPage)
         {
-            var instance = IoC.GetInstance(nextPage._ViewModelType, null);//Or just create viewModel by type
+            var instance = IoC.GetInstance(nextPage._ViewModelType, null);
             ActivateItem(instance);
 
         }

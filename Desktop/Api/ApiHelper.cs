@@ -40,16 +40,16 @@ namespace Desktop.Api
 
         public async Task<UserAccess> Authenticate(string username, string password)
         {
-          
-            var data = new FormUrlEncodedContent(new[]
+            var data = new
             {
-                new KeyValuePair<string, string>("grant_type", password),
-                new KeyValuePair<string, string>("username", username),
-                new KeyValuePair<string, string>("password", password)
+                username,
+                password
+            };
 
-            });
+            var json = JsonConvert.SerializeObject(data);
+            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");           
 
-            using (HttpResponseMessage responseMessage = await _apiClient.PostAsync("api/Authentication/login", data))
+            using (HttpResponseMessage responseMessage = await _apiClient.PostAsync("api/Authentication/login", stringContent))
             {
                 if (responseMessage.IsSuccessStatusCode)
                 {

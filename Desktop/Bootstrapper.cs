@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using Desktop.Api;
+using Desktop.Api.Endpoints;
+using Desktop.Endpoints;
 using Desktop.EventModels;
 using Desktop.ViewModels;
 using System;
@@ -23,7 +25,11 @@ namespace Desktop
         {
             _container.Instance(_container)
                 .PerRequest<IPassEndpoint, PassEndpoint>()
-                .PerRequest<IPrisonerEndpoint, PrisonerEndpoint>();
+                .PerRequest<IPrisonerEndpoint, PrisonerEndpoint>()
+                .PerRequest<ICellEndpoint, CellEndpoint>()
+                .PerRequest<IPunishmentEndpoint, PunishmentEndpoint>()
+                .PerRequest<IReasonEndpoint, ReasonEndpoint>();
+
 
 
             _container

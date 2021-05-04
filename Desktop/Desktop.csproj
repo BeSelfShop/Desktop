@@ -74,10 +74,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Api\IPassEndpoint.cs" />
-    <Compile Include="Api\IPrisonerEndpoint.cs" />
-    <Compile Include="Api\PassEndpoint.cs" />
-    <Compile Include="Api\PrisonerEndpoint.cs" />
+    <Compile Include="Api\Endpoints\IPunishmentEndpoint.cs" />
+    <Compile Include="Api\Endpoints\IReasonEndpoint.cs" />
+    <Compile Include="Endpoints\CellEndpoint.cs" />
+    <Compile Include="Api\Endpoints\ICellEndpoint.cs" />
+    <Compile Include="Api\Endpoints\IPassEndpoint.cs" />
+    <Compile Include="Api\Endpoints\IPrisonerEndpoint.cs" />
+    <Compile Include="Endpoints\PassEndpoint.cs" />
+    <Compile Include="Endpoints\PrisonerEndpoint.cs" />
+    <Compile Include="Endpoints\PunishmentEndpoint.cs" />
+    <Compile Include="Endpoints\ReasonEndpoint.cs" />
     <Compile Include="EventModels\LogOnEventModel.cs" />
     <Compile Include="Api\ApiHelper.cs" />
     <Compile Include="Api\IApiHelper.cs" />
