@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Desktop.Views"
         mc:Ignorable="d"
-        Title="ShellViews" Height="450" Width="800">
+        Title="Więzienie"
+        WindowState="Maximized"
+        WindowStyle="ToolWindow">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="AliceBlue">
-            <MenuItem x:Name="LogOut" Header="_LogOut"></MenuItem>
-            <MenuItem x:Name="Prisoner" Header="Więźniowie"></MenuItem>
-            <MenuItem x:Name="Pass" Header="Przepustka"></MenuItem>
+            <MenuItem x:Name="LogOut" Header="Wyloguj"></MenuItem>
+            <MenuItem x:Name="Home" Header="Menu"></MenuItem>
         </Menu>
         <ContentControl x:Name="ActiveItem"/>
     </DockPanel>

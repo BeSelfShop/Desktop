@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using Desktop.Api;
+using Desktop.Api.Endpoints;
 using Desktop.EventModels;
 using Desktop.Model;
 using System;
@@ -17,13 +18,15 @@ namespace Desktop.ViewModels
     public class PrisonerViewModel : Screen 
     {
         private IEventAggregator _eventAggregator;
+        private readonly INavigationService _navigationService;
         private IPrisonerEndpoint _prisonerEndpoint;
         private BindingList<Prisoner> _allPrisoner;
 
 
-        public PrisonerViewModel(IPrisonerEndpoint prisonerEndpoint, IEventAggregator eventAggregator)
+        public PrisonerViewModel(IPrisonerEndpoint prisonerEndpoint, IEventAggregator eventAggregator, INavigationService navigationService)
         {
             _prisonerEndpoint = prisonerEndpoint;
+            _navigationService = navigationService;
             _eventAggregator = eventAggregator;
         }
 
@@ -56,10 +59,13 @@ namespace Desktop.ViewModels
             await  LoadPrisoners();
 
         }
-        public void DetailsOfThePrisoner(Prisoner prisoner)
+        public void DetailsOfThePrisoner(Prisoner prisoner)         
         {
-            
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
+            _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(prisoner));
         }
+
+
         public void AddPrisoner()
         {
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddPrisonerViewModel)));

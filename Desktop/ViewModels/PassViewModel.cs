@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using Desktop.Api;
+using Desktop.Api.Endpoints;
 using Desktop.Model;
 using System;
 using System.Collections.Generic;

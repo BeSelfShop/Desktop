@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using Desktop.Api;
+using Desktop.Api.Endpoints;
 using Desktop.EventModels;
 using Desktop.Model;
 using System;

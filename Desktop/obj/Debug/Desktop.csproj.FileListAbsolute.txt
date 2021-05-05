@@ -105,3 +105,5 @@ D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PrisonerView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PrisonerView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPrisonerView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPrisonerView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\DetailsOfThePrisonerView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\DetailsOfThePrisonerView.baml

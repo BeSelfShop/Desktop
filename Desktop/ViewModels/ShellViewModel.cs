@@ -10,7 +10,7 @@ using Desktop.Views;
 
 namespace Desktop.ViewModels
 {
-    public class ShellViewModel : Conductor<object>, IHandle<LogOnEventModel>, IHandle<NextPageEventModel>
+    public class ShellViewModel : Conductor<object>, IHandle<LogOnEventModel>, IHandle<NextPageEventModel> 
     {
         //private LoginViewModel _loginViewModel;
         private IEventAggregator _eventAggregator;
@@ -33,8 +33,8 @@ namespace Desktop.ViewModels
 
         public void Handle(LogOnEventModel message)
         {
-            
-                ActivateItem(_homeViewModel);           
+
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(HomeViewModel)));
         }
 
         
@@ -43,7 +43,11 @@ namespace Desktop.ViewModels
         {
             var instance = IoC.GetInstance(nextPage._ViewModelType, null);
             ActivateItem(instance);
+        }
 
+        public void Home()
+        {
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(HomeViewModel)));
         }
     }
 }
