@@ -9,5 +9,7 @@ namespace Desktop.Api.Endpoints
         Task AddPass(Pass pass);
         Task<List<Pass>> AllPass();
         Task DeletePass(int idPass);
+        Task<Pass> SelectedPass(int idPass);
+        Task UpdatePass(int idPass, Pass pass);
     }
 }

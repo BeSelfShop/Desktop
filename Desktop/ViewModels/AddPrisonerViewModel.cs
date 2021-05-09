@@ -26,8 +26,6 @@ namespace Desktop.ViewModels
         private int _behavior;
         private Cell _cell;
 
-        Button button = new Button();
-
 
         public AddPrisonerViewModel(IEventAggregator eventAggregator,IPrisonerEndpoint prisonerEndpoint, ICellEndpoint cellEndpoint)
         {
@@ -144,7 +142,7 @@ namespace Desktop.ViewModels
             prisoner.Isolated = false;
             prisoner.IdCell = SelectedCell.Id;
             _prisonerEndpoint.AddPrisoner(prisoner);
-            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(PrisonerViewModel)));
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddPunishmentViewModel)));
         }
     }
 }

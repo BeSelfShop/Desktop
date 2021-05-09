@@ -10,7 +10,7 @@ namespace Desktop.Api.Endpoints
     public interface IPunishmentEndpoint
     {
         Task AddPunishment(Punishment punishment);
-        Task<List<Punishment>> AllPunishment();
+        Task<Punishment> SelectedPunishment(int idPunishment);
         Task DeletePunishment(int idPunishment);
     }
 }

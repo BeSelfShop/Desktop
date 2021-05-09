@@ -9,8 +9,7 @@ namespace Desktop.Api.Endpoints
 {
     public interface IReasonEndpoint
     {
-        Task AddReason(Reason reason);
         Task<List<Reason>> AllReason();
-        Task DeleteReason(int idReason);
+        Task<Reason> SelectedReason(int idReason);
     }
 }

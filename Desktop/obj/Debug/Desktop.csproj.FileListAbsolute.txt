@@ -107,3 +107,9 @@ D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPrisonerView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPrisonerView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\DetailsOfThePrisonerView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\DetailsOfThePrisonerView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPunishmentView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPunishmentView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePrisonerView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePunishmentView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePrisonerView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePunishmentView.baml

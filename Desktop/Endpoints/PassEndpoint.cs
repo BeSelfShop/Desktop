@@ -47,5 +47,25 @@ namespace Desktop.Endpoints
         {
             HttpResponseMessage responseMessage = await _apiHelper.ApiClient.DeleteAsync("api/Pass/" + idPass);
         }
+
+        public async Task<Pass> SelectedPass(int idPass)
+        {
+            HttpResponseMessage responseMessage = await _apiHelper.ApiClient.GetAsync("api/Prisoner/" + idPass);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var result = await responseMessage.Content.ReadAsAsync<Pass>();
+                return result;
+            }
+            else
+            {
+                throw new Exception(responseMessage.ReasonPhrase);
+            }
+        }
+        public async Task UpdatePass(int idPass, Pass pass)
+        {
+            var json = JsonConvert.SerializeObject(pass);
+            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+            HttpResponseMessage responseMessage = await _apiHelper.ApiClient.PutAsync("api/Prisoner/" + idPass, stringContent);
+        }
     }
 }

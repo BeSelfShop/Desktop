@@ -18,12 +18,6 @@ namespace Desktop.Endpoints
         {
             _apiHelper = apiHelper;
         }
-        public async Task AddReason(Reason reason)
-        {
-            var json = JsonConvert.SerializeObject(reason);
-            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
-            HttpResponseMessage responseMessage = await _apiHelper.ApiClient.PostAsync("api/Reason", stringContent);
-        }
 
         public async Task<List<Reason>> AllReason()
         {
@@ -41,9 +35,20 @@ namespace Desktop.Endpoints
             }
         }
 
-        public async Task DeleteReason(int idReason)
+        public async Task<Reason> SelectedReason(int idReason)
         {
-            HttpResponseMessage responseMessage = await _apiHelper.ApiClient.DeleteAsync("api/Reason/"+idReason);
+            using(HttpResponseMessage responseMessage = await _apiHelper.ApiClient.GetAsync("api/Reason/"+ idReason))
+            {
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var result = await responseMessage.Content.ReadAsAsync<Reason>();
+                    return result;
+                }
+                else
+                {
+                    throw new Exception(responseMessage.ReasonPhrase);
+                }
+            }
         }
     }
 }

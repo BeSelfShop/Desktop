@@ -1,12 +1,13 @@
 ﻿<UserControl x:Class="Desktop.Views.DetailsOfThePrisonerView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Desktop.Views"
-             mc:Ignorable="d"  Background="White"
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Background="White"
+             d:DesignHeight="450" d:DesignWidth="800"
+             xmlns:cal="http://www.caliburnproject.org">
+
+        <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="3*"/>
@@ -17,36 +18,82 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        
-        <ItemsControl x:Name="Prisoner" Grid.Row="1"  Grid.Column="1"  MinHeight="100" MinWidth="200" 
-                 HorizontalAlignment="Center" ItemsSource="{Binding Prisoner}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding Path=Name}" Width="Auto" />
-                        <TextBlock Text="{Binding Path=Forname}" Width="Auto" />
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            
-        </ItemsControl>
 
-        <ItemsControl x:Name="Pass" Grid.Row="1"  Grid.Column="3"  MinHeight="100" MinWidth="200" 
-                 HorizontalAlignment="Center" >
+        <Grid DataContext="{Binding GetPrisoner}" Grid.Row="1" Grid.Column="1" Background="LightGray">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Name}"  FontSize="20"/>
+                    <TextBlock Text="{Binding Forname}"  FontSize="20" Margin="6 0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Pesel: " FontSize="16"/>
+                    <TextBlock Text="{Binding Pesel}" FontSize="16" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Adres: " FontSize="16" />
+                    <TextBlock Text="{Binding Address}" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Zachowanie: " FontSize="16"/>
+                    <TextBlock Text="{Binding Behavior}" FontSize="16"/>
+                </StackPanel>
+                <Button x:Name="UpdatePrisoner" HorizontalAlignment="Center" Margin="10 10">Edytuj</Button>
+            </StackPanel>
+        </Grid>
 
-        </ItemsControl>
-        
-        <ItemsControl x:Name="Isolation" Grid.Row="3"  Grid.Column="3"  MinHeight="100" MinWidth="200" 
-                 HorizontalAlignment="Center">
+        <Grid DataContext="{Binding GetPunishment }" Grid.Row="1" Grid.Column="3"  Background="LightGray">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Kara" FontSize="20" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Data rozpoczęcia: " FontSize="16"/>
+                    <TextBlock Text="{Binding StartDate}" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Data zakończenia: " FontSize="16"/>
+                    <TextBlock Text="{Binding EndDate}" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Powód: " FontSize="16"/>
+                    <TextBlock Text="{Binding Reason}" FontSize="16"/>
+                </StackPanel>
+                <Button x:Name="UpdatePunishment" HorizontalAlignment="Center" Margin="10 10">Edytuj</Button>
+            </StackPanel>
+        </Grid>
 
-        </ItemsControl>
+        <Grid DataContext="{Binding GetPass}" Grid.Row="3" Grid.Column="1"  Background="LightGray">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
+                <TextBlock Text="Przepustka" FontSize="20" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Data rozpoczęcia: " FontSize="16"/>
+                    <TextBlock Text="{Binding StartDate}" FontSize="16"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Data zakończenia: " FontSize="16"/>
+                    <TextBlock Text="{Binding EndDate}" FontSize="16"/>
+                </StackPanel>
+                
+                
+            </StackPanel>
+        </Grid>
 
+        <Grid DataContext="{Binding GetIsolation}" Grid.Row="3" Grid.Column="3"  Background="LightGray">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Izolatka" FontSize="20" />
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Początek: " FontSize="16"/>
+                    <DatePicker Text="{Binding StartDate}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Koniec: " FontSize="16"/>
+                    <DatePicker Text="{Binding EndDate}" />
+                </StackPanel>
 
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

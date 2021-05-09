@@ -61,8 +61,10 @@ namespace Desktop.ViewModels
         }
         public void DetailsOfThePrisoner(Prisoner prisoner)         
         {
+
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
             _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(prisoner));
+
         }
 
 

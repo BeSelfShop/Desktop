@@ -25,13 +25,13 @@ namespace Desktop.Endpoints
             HttpResponseMessage responseMessage = await _apiHelper.ApiClient.PostAsync("api/Punishment", stringContent);
         }
 
-        public async Task<List<Punishment>> AllPunishment()
+        public async Task<Punishment> SelectedPunishment(int idPunishment)
         {
-            using (HttpResponseMessage responseMessage = await _apiHelper.ApiClient.GetAsync("api/Punishment"))
+            using (HttpResponseMessage responseMessage = await _apiHelper.ApiClient.GetAsync("api/Punishment/"+ idPunishment))
             {
                 if (responseMessage.IsSuccessStatusCode)
                 {
-                    var result = await responseMessage.Content.ReadAsAsync<List<Punishment>>();
+                    var result = await responseMessage.Content.ReadAsAsync<Punishment>();
                     return result;
                 }
                 else
