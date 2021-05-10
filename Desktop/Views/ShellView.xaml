@@ -10,10 +10,9 @@
         WindowStyle="ToolWindow">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="AliceBlue">
-            <MenuItem x:Name="LogOut" Header="Wyloguj"></MenuItem>
             <MenuItem x:Name="Home" Header="Menu"></MenuItem>
             <MenuItem x:Name="Register" Header="Rejestracja"></MenuItem>
-            </Menu>
+        </Menu>
         <ContentControl x:Name="ActiveItem"/>
     </DockPanel>
 </Window>

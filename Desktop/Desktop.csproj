@@ -98,6 +98,7 @@
     <Compile Include="EventModels\NextPageEventModel.cs" />
     <Compile Include="EventModels\SelectedPrisonerEventModel.cs" />
     <Compile Include="EventModels\SelectedPunishmentEventModel.cs" />
+    <Compile Include="EventModels\UserPermisionEventModel.cs" />
     <Compile Include="Hepler\PasswordBoxHelper.cs" />
     <Compile Include="Model\Cell.cs" />
     <Compile Include="Model\CellType.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="ViewModels\CellViewModel.cs" />
     <Compile Include="ViewModels\DetailsOfThePrisonerViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\InvitationViewModel.cs" />
     <Compile Include="ViewModels\LoggerViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\PrisonerViewModel.cs" />
@@ -154,6 +156,9 @@
     </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InvitationView.xaml.cs">
+      <DependentUpon>InvitationView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoggerView.xaml.cs">
       <DependentUpon>LoggerView.xaml</DependentUpon>
@@ -239,6 +244,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InvitationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

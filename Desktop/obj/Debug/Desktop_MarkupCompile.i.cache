@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\KurortWiezienny\Desktop\Desktop\App.xaml
-16-1833409727
+17256763596
 
-75-1385225433
+78120148447
 124655027610
-Views\AddCellView.xaml;Views\AddIsolationView.xaml;Views\AddPassView.xaml;Views\AddPrisonerView.xaml;Views\AddPunishmentView.xaml;Views\CellView.xaml;Views\DetailsOfThePrisonerView.xaml;Views\HomeView.xaml;Views\LoggerView.xaml;Views\LoginView.xaml;Views\PrisonerView.xaml;Views\RegistrationView.xaml;Views\ShellView.xaml;Views\UpdateCellView.xaml;Views\UpdatePrisonerView.xaml;Views\UpdatePunishmentView.xaml;
+Views\AddCellView.xaml;Views\AddIsolationView.xaml;Views\AddPassView.xaml;Views\AddPrisonerView.xaml;Views\AddPunishmentView.xaml;Views\CellView.xaml;Views\DetailsOfThePrisonerView.xaml;Views\HomeView.xaml;Views\InvitationView.xaml;Views\LoggerView.xaml;Views\LoginView.xaml;Views\PrisonerView.xaml;Views\RegistrationView.xaml;Views\ShellView.xaml;Views\UpdateCellView.xaml;Views\UpdatePrisonerView.xaml;Views\UpdatePunishmentView.xaml;
 
-False
+True
 

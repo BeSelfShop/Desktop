@@ -15,11 +15,12 @@ using System.Windows.Input;
 
 namespace Desktop.ViewModels
 {
-    public class PrisonerViewModel : Screen 
+    public class PrisonerViewModel : Screen, IHandle<UserPermisionEventModel>
     {
         private IEventAggregator _eventAggregator;
         private IPrisonerEndpoint _prisonerEndpoint;
         private BindingList<Prisoner> _allPrisoner;
+        private string role;
 
 
         public PrisonerViewModel(IPrisonerEndpoint prisonerEndpoint, IEventAggregator eventAggregator)
@@ -39,6 +40,10 @@ namespace Desktop.ViewModels
             base.OnViewLoaded(view);
             await LoadPrisoners();
         }
+        public void Handle(UserPermisionEventModel message)
+        {
+            role = message._Roles;
+        }
 
         public BindingList<Prisoner> AllPrisoner
         {
@@ -52,9 +57,11 @@ namespace Desktop.ViewModels
 
         public async Task DeletePrisoner(Prisoner prisoner)
         {
-
-            await _prisonerEndpoint.DeletePrisoner(prisoner.Id);
-            await  LoadPrisoners();
+            if (role == "Admin")
+            {
+                await _prisonerEndpoint.DeletePrisoner(prisoner.Id);
+                await LoadPrisoners();
+            }
 
         }
         public void DetailsOfThePrisoner(Prisoner prisoner)         
@@ -68,7 +75,10 @@ namespace Desktop.ViewModels
 
         public void AddPrisoner()
         {
-            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddPrisonerViewModel)));
+            if (role == "Admin")
+            {
+                _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddPrisonerViewModel)));
+            }
         }
 
 

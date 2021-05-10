@@ -84,6 +84,11 @@ namespace Desktop.ViewModels
             }
 
         }
+
+        public void Register()
+        {
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(RegistrationViewModel)));
+        }
             
         
      }

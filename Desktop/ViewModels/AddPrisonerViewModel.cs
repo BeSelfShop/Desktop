@@ -19,11 +19,11 @@ namespace Desktop.ViewModels
         private IPrisonerEndpoint _prisonerEndpoint;
         private ICellEndpoint _cellEndpoint;
         private BindingList<Cell> _cells;
-        private string _name;
-        private string _forname;
-        private string _pesel;
-        private string _addres;
-        private int _behavior;
+        private string _name = "";
+        private string _forname = "";
+        private string _pesel = "";
+        private string _addres = "";
+        private int _behavior ;
         private Cell _cell;
 
 
@@ -127,6 +127,22 @@ namespace Desktop.ViewModels
                 NotifyOfPropertyChange(() => SelectedCell);
 
             }
+        }
+        public bool CanAddPrisoner
+        {
+            get
+            {
+                bool output = false;
+
+                if ((Name.Length > 0) && (Forname.Length > 0) && (Pesel.Length > 0) && (Addres.Length > 0) && (Behavior > 0) && (SelectedCell.BedsCount > 0))
+                {
+                    output = true;
+                }
+
+                return output;
+
+            }
+
         }
 
 

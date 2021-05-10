@@ -123,3 +123,5 @@ D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\CellView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdateCellView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\LoggerView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\LoggerView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\InvitationView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\InvitationView.baml

@@ -13,6 +13,10 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
@@ -23,25 +27,43 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontStyle="Italic" 
+        <TextBlock  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontStyle="Italic" 
                     FontSize="45" Margin="0 0 0 20 ">
-            Panel logowania
+            Rejestracja
         </TextBlock>
 
-        <TextBlock  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" Margin="0 0 50 20 " >
-            Nazwa użytkownika:
+        <TextBlock  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" Margin="0 0 50 20 " >
+            Login:
         </TextBlock>
-        <TextBox x:Name="userName" Grid.Row="2" Grid.Column="2" Width="200" Height="20" Margin="0 0 0 20 "/>
+        <TextBox x:Name="UserName" Grid.Row="1" Grid.Column="2" Width="200" Height="20" Margin="0 0 0 20 "/>
+
+        <TextBlock  Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" Margin="0 0 50 20 ">
+            Hsło:
+        </TextBlock>
+        <TextBox x:Name="Password" Grid.Row="2" Grid.Column="2" Width="200" Height="20" Margin="0 0 5 20 "/>
 
         <TextBlock  Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" Margin="0 0 50 20 ">
-            Hasło:
+            Name:
         </TextBlock>
-        <PasswordBox x:Name="password" Grid.Row="3" Grid.Column="2" Width="200" Height="20" Margin="0 0 5 20 "/>
+        <TextBox x:Name="Name" Grid.Row="3" Grid.Column="2" Width="200" Height="20" Margin="0 0 5 20 "/>
 
-        <Button x:Name="loginButton" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20"
-                Padding="100 30" Margin="0 0 0 20 ">
-            Zaloguj
+        <TextBlock  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" Margin="0 0 50 20 ">
+            Forname:
+        </TextBlock>
+        <TextBox x:Name="Formane" Grid.Row="4" Grid.Column="2" Width="200" Height="20" Margin="0 0 5 20 "/>
+
+        <TextBlock  Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" Margin="0 0 50 20 ">
+            Email:
+        </TextBlock>
+        <TextBox x:Name="Email" Grid.Row="6" Grid.Column="2" Width="200" Height="20" Margin="0 0 5 20 "/>
+        
+        <TextBlock  Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" Margin="0 0 50 20 ">
+            Kod:
+        </TextBlock>
+        <TextBox x:Name="InviteCode" Grid.Row="7" Grid.Column="2" Width="200" Height="20" Margin="0 0 5 20 "/>
+        
+        <Button x:Name="AddUser"  Grid.Row="8" Grid.Column="2" HorizontalAlignment="Left" FontStyle="Italic" FontSize="20" Margin="0 0 50 20 ">
+            Zarejestuj
         </Button>
-
     </Grid>
 </UserControl>
