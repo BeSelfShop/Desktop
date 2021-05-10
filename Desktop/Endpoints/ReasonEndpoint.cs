@@ -13,8 +13,8 @@ namespace Desktop.Endpoints
 {
     public class ReasonEndpoint : IReasonEndpoint
     {
-        private ApiHelper _apiHelper;
-        public ReasonEndpoint(ApiHelper apiHelper)
+        private IApiHelper _apiHelper;
+        public ReasonEndpoint(IApiHelper apiHelper)
         {
             _apiHelper = apiHelper;
         }

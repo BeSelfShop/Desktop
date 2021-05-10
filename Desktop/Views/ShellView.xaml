@@ -12,7 +12,8 @@
         <Menu DockPanel.Dock="Top" Background="AliceBlue">
             <MenuItem x:Name="LogOut" Header="Wyloguj"></MenuItem>
             <MenuItem x:Name="Home" Header="Menu"></MenuItem>
-        </Menu>
+            <MenuItem x:Name="Register" Header="Rejestracja"></MenuItem>
+            </Menu>
         <ContentControl x:Name="ActiveItem"/>
     </DockPanel>
 </Window>

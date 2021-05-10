@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Desktop.Views
 {
     /// <summary>
-    /// Logika interakcji dla klasy PassView.xaml
+    /// Logika interakcji dla klasy AddIsolation.xaml
     /// </summary>
-    public partial class PassView : UserControl
+    public partial class AddIsolationView : UserControl
     {
-        public PassView()
+        public AddIsolationView()
         {
             InitializeComponent();
         }

@@ -5,6 +5,7 @@
 
     <Application.Resources>
         <ResourceDictionary>
+            <BooleanToVisibilityConverter x:Key="VisibilityOfBool" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <local:Bootstrapper x:Key="bootstrapper"/>

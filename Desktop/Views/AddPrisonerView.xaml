@@ -74,8 +74,5 @@
         </ComboBox>
 
         <Button x:Name="AddPrisoner" Grid.Row="9" Grid.Column="2" Width="100" Height="30" >Dodaj</Button>
-
-
-
     </Grid>
 </UserControl>

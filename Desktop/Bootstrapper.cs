@@ -28,7 +28,11 @@ namespace Desktop
                 .PerRequest<IPrisonerEndpoint, PrisonerEndpoint>()
                 .PerRequest<ICellEndpoint, CellEndpoint>()
                 .PerRequest<IPunishmentEndpoint, PunishmentEndpoint>()
-                .PerRequest<IReasonEndpoint, ReasonEndpoint>();
+                .PerRequest<IReasonEndpoint, ReasonEndpoint>()
+                .PerRequest<IIsolationEndpoint, IsolationEndpoint>()
+                .PerRequest<ICellTypeEndpoint, CellTypeEndpoint>()
+                .PerRequest<ILoggerEndpoint, LoggerEndpoint>();
+            
 
 
 

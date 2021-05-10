@@ -48,9 +48,9 @@ namespace Desktop.Endpoints
             HttpResponseMessage responseMessage = await _apiHelper.ApiClient.DeleteAsync("api/Pass/" + idPass);
         }
 
-        public async Task<Pass> SelectedPass(int idPass)
+        public async Task<Pass> SelectedPass(int idPrisoner)
         {
-            HttpResponseMessage responseMessage = await _apiHelper.ApiClient.GetAsync("api/Prisoner/" + idPass);
+            HttpResponseMessage responseMessage = await _apiHelper.ApiClient.GetAsync("api/Pass/" + idPrisoner);
             if (responseMessage.IsSuccessStatusCode)
             {
                 var result = await responseMessage.Content.ReadAsAsync<Pass>();

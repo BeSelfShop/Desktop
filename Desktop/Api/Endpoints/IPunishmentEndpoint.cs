@@ -12,5 +12,6 @@ namespace Desktop.Api.Endpoints
         Task AddPunishment(Punishment punishment);
         Task<Punishment> SelectedPunishment(int idPunishment);
         Task DeletePunishment(int idPunishment);
+        Task UpdatePunishment(int idPunishment, Punishment punishment);
     }
 }

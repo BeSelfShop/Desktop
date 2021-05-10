@@ -45,5 +45,21 @@ namespace Desktop.Endpoints
             var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
             HttpResponseMessage responseMessage = await _apiHelper.ApiClient.PostAsync("api/PCells", stringContent);
         }
+        public async Task<Cell> SelectedCell(int idCell)
+        {
+            using (HttpResponseMessage responseMessage = await _apiHelper.ApiClient.GetAsync("api/PCells/"+idCell))
+            {
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    var result = await responseMessage.Content.ReadAsAsync<Cell>();
+                    return result;
+                }
+                else
+                {
+                    throw new Exception(responseMessage.ReasonPhrase);
+                }
+
+            }
+        }
     }
 }

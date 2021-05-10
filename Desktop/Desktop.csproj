@@ -74,12 +74,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Api\Endpoints\ICellTypeEndpoint.cs" />
+    <Compile Include="Api\Endpoints\IIsolationEndpoint.cs" />
+    <Compile Include="Api\Endpoints\ILoggerEndpoint.cs" />
     <Compile Include="Api\Endpoints\IPunishmentEndpoint.cs" />
     <Compile Include="Api\Endpoints\IReasonEndpoint.cs" />
     <Compile Include="Endpoints\CellEndpoint.cs" />
     <Compile Include="Api\Endpoints\ICellEndpoint.cs" />
     <Compile Include="Api\Endpoints\IPassEndpoint.cs" />
     <Compile Include="Api\Endpoints\IPrisonerEndpoint.cs" />
+    <Compile Include="Endpoints\CellTypeEndpoint.cs" />
+    <Compile Include="Endpoints\IsolationEndpoint.cs" />
+    <Compile Include="Endpoints\LoggerEndpoint.cs" />
     <Compile Include="Endpoints\PassEndpoint.cs" />
     <Compile Include="Endpoints\PrisonerEndpoint.cs" />
     <Compile Include="Endpoints\PunishmentEndpoint.cs" />
@@ -89,6 +95,7 @@
     <Compile Include="Api\IApiHelper.cs" />
     <Compile Include="EventModels\NextPageEventModel.cs" />
     <Compile Include="EventModels\SelectedPrisonerEventModel.cs" />
+    <Compile Include="EventModels\SelectedPunishmentEventModel.cs" />
     <Compile Include="Hepler\PasswordBoxHelper.cs" />
     <Compile Include="Model\Cell.cs" />
     <Compile Include="Model\CellType.cs" />
@@ -101,12 +108,16 @@
     <Compile Include="Model\Punishment.cs" />
     <Compile Include="Model\Reason.cs" />
     <Compile Include="Model\UserAccess.cs" />
+    <Compile Include="ViewModels\AddCellViewModel.cs" />
+    <Compile Include="ViewModels\AddIsolationViewModel.cs" />
+    <Compile Include="ViewModels\AddPassViewModel.cs" />
     <Compile Include="ViewModels\AddPrisonerViewModel.cs" />
     <Compile Include="ViewModels\AddPunishmentViewModel.cs" />
+    <Compile Include="ViewModels\CellViewModel.cs" />
     <Compile Include="ViewModels\DetailsOfThePrisonerViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\LoggerViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\PassViewModel.cs" />
     <Compile Include="ViewModels\PrisonerViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -114,13 +125,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\UpadePrisonerViewModel.cs" />
+    <Compile Include="ViewModels\UpdateCellViewModel.cs" />
+    <Compile Include="ViewModels\UpdatePrisonerViewModel.cs" />
     <Compile Include="ViewModels\UpdatePunishmentViewModel.cs" />
+    <Compile Include="Views\AddCellView.xaml.cs">
+      <DependentUpon>AddCellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddIsolationView.xaml.cs">
+      <DependentUpon>AddIsolationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddPassView.xaml.cs">
+      <DependentUpon>AddPassView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AddPrisonerView.xaml.cs">
       <DependentUpon>AddPrisonerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddPunishmentView.xaml.cs">
       <DependentUpon>AddPunishmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CellView.xaml.cs">
+      <DependentUpon>CellView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\DetailsOfThePrisonerView.xaml.cs">
       <DependentUpon>DetailsOfThePrisonerView.xaml</DependentUpon>
@@ -128,11 +152,11 @@
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoggerView.xaml.cs">
+      <DependentUpon>LoggerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PassView.xaml.cs">
-      <DependentUpon>PassView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PrisonerView.xaml.cs">
       <DependentUpon>PrisonerView.xaml</DependentUpon>
@@ -142,6 +166,9 @@
     </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UpdateCellView.xaml.cs">
+      <DependentUpon>UpdateCellView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UpdatePrisonerView.xaml.cs">
       <DependentUpon>UpdatePrisonerView.xaml</DependentUpon>
@@ -180,11 +207,27 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="Views\AddCellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddIsolationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddPassView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddPrisonerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddPunishmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,11 +239,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\LoginView.xaml">
+    <Page Include="Views\LoggerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PassView.xaml">
+    <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,6 +256,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UpdateCellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

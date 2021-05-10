@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Desktop.Model
 {
-    class Isolation
+    public class Isolation
     {
         public int Id { get; set; }
         public DateTime StartDate { get; set; }

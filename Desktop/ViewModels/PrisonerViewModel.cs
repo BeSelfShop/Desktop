@@ -18,15 +18,13 @@ namespace Desktop.ViewModels
     public class PrisonerViewModel : Screen 
     {
         private IEventAggregator _eventAggregator;
-        private readonly INavigationService _navigationService;
         private IPrisonerEndpoint _prisonerEndpoint;
         private BindingList<Prisoner> _allPrisoner;
 
 
-        public PrisonerViewModel(IPrisonerEndpoint prisonerEndpoint, IEventAggregator eventAggregator, INavigationService navigationService)
+        public PrisonerViewModel(IPrisonerEndpoint prisonerEndpoint, IEventAggregator eventAggregator)
         {
             _prisonerEndpoint = prisonerEndpoint;
-            _navigationService = navigationService;
             _eventAggregator = eventAggregator;
         }
 

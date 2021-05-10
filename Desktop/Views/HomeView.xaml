@@ -7,7 +7,6 @@
              mc:Ignorable="d"  Background="White"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -19,25 +18,11 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <Button x:Name="CelType" Grid.Row="0" Grid.Column="0">Rodzaje cel</Button>
 
-        <Button x:Name="Isolation" Grid.Row="1" Grid.Column="0">Izolacja</Button>
+        <Button x:Name="Logger" Grid.Row="1" Grid.Column="0">Logi aplikacji</Button>
 
-        <Button x:Name="Reason" Grid.Row="2" Grid.Column="0">Powód skazania</Button>
-                
-        <Button x:Name="Pass" Grid.Row="0" Grid.Column="1">Przepustki</Button>
-                
-        <Button x:Name="PCells" Grid.Row="1" Grid.Column="1">Cele</Button>
-                
-        <Button x:Name="Prisoner" Grid.Row="2" Grid.Column="1">Więźniowie</Button>
-                
-        <Button x:Name="Punishment" Grid.Row="0" Grid.Column="2">Kara</Button>
+        <Button x:Name="Prisoner" Grid.Row="1" Grid.Column="1">Więźniowie</Button>
 
-        <Button x:Name="Logger" Grid.Row="1" Grid.Column="2">Logi aplikacji</Button>
-
-        <Button x:Name="Register" Grid.Row="2" Grid.Column="2">Rejestracja</Button>
-
-
+        <Button x:Name="PCells" Grid.Row="1" Grid.Column="2">Cele</Button>
     </Grid>
 </UserControl>

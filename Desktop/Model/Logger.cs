@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Desktop.Model
 {
-    class Logger
+    public class Logger
     {
         public int Id { get; set; }
         public DateTime LogData { get; set; }

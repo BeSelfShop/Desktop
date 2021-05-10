@@ -45,5 +45,11 @@ namespace Desktop.Endpoints
         {
             HttpResponseMessage responseMessage = await _apiHelper.ApiClient.DeleteAsync("api/Punishment/" + idPunishment);
         }
+        public async Task UpdatePunishment(int idPunishment, Punishment punishment)
+        {
+            var json = JsonConvert.SerializeObject(punishment);
+            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+            HttpResponseMessage responseMessage = await _apiHelper.ApiClient.PutAsync("api/Punishment/" + idPunishment, stringContent);
+        }
     }
 }

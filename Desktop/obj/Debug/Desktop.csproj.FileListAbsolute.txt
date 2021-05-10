@@ -98,9 +98,7 @@ C:\Repos\Desktop\Desktop\obj\Debug\Desktop.csproj.CopyComplete
 C:\Repos\Desktop\Desktop\obj\Debug\Desktop.exe
 C:\Repos\Desktop\Desktop\obj\Debug\Desktop.pdb
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\HomeView.g.cs
-D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PassView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\HomeView.baml
-D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PassView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PrisonerView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\PrisonerView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPrisonerView.g.cs
@@ -113,3 +111,15 @@ D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePrisonerView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePunishmentView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePrisonerView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePunishmentView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPassView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddPassView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddCellView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddIsolationView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\CellView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdateCellView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddCellView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\AddIsolationView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\CellView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdateCellView.baml
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\LoggerView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\LoggerView.baml

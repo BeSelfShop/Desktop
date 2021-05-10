@@ -17,13 +17,13 @@ namespace Desktop.ViewModels
         {
             _eventAggregator = eventAggregator;
         }
-        public void CellType()
+        public void Logger()
         {
-            
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(LoggerViewModel)));
         }
-        public void Pass()
+        public void PCells()
         {
-            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(PassViewModel)));
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(CellViewModel)));
         }
         public void Prisoner()
         {
