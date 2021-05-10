@@ -79,6 +79,7 @@
     <Compile Include="Api\Endpoints\ILoggerEndpoint.cs" />
     <Compile Include="Api\Endpoints\IPunishmentEndpoint.cs" />
     <Compile Include="Api\Endpoints\IReasonEndpoint.cs" />
+    <Compile Include="Api\Endpoints\IRegistrationEndpoints.cs" />
     <Compile Include="Endpoints\CellEndpoint.cs" />
     <Compile Include="Api\Endpoints\ICellEndpoint.cs" />
     <Compile Include="Api\Endpoints\IPassEndpoint.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Endpoints\PrisonerEndpoint.cs" />
     <Compile Include="Endpoints\PunishmentEndpoint.cs" />
     <Compile Include="Endpoints\ReasonEndpoint.cs" />
+    <Compile Include="Endpoints\RegistrationEndpoints.cs" />
     <Compile Include="EventModels\LogOnEventModel.cs" />
     <Compile Include="Api\ApiHelper.cs" />
     <Compile Include="Api\IApiHelper.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Model\Prisoner.cs" />
     <Compile Include="Model\Punishment.cs" />
     <Compile Include="Model\Reason.cs" />
+    <Compile Include="Model\Registration.cs" />
     <Compile Include="Model\UserAccess.cs" />
     <Compile Include="ViewModels\AddCellViewModel.cs" />
     <Compile Include="ViewModels\AddIsolationViewModel.cs" />
