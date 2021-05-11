@@ -9,8 +9,10 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -27,22 +29,21 @@
                     FontSize="35" Margin="0 0 0 20 ">
             Lista więźniów
         </TextBlock>
-
-        <ItemsControl x:Name="AllPrisoner" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" MinHeight="300" MinWidth="500" 
+        <ItemsControl x:Name="AllPrisoner" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" MinHeight="300" MinWidth="500" 
                  HorizontalAlignment="Center" ItemsSource="{Binding AllPrisoner}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Path=Name}" Width="Auto" />
-                        <TextBlock Text="{ Binding Path=Forname}" Margin="20 0 " Width="Auto"/>
-                        <Button  Content ="Usuń" cal:Message.Attach="DeletePrisoner($dataContext)"/>
-                        <Button  Content ="Szczegóły" cal:Message.Attach="DetailsOfThePrisoner($dataContext)"/>
+                            <TextBlock Text="{ Binding Path=Forname}" Margin="20 0 " Width="Auto"/>
+                            <Button  Content ="Usuń" cal:Message.Attach="DeletePrisoner($dataContext)"/>
+                            <Button  Content ="Szczegóły" cal:Message.Attach="DetailsOfThePrisoner($dataContext)"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
         
-        <Button x:Name="AddPrisoner" Grid.Row="4"  Grid.Column="2"  FontSize="20"> Dodaj Więźnia</Button>
+        <Button x:Name="AddPrisoner" Grid.Row="5"  Grid.Column="2"  FontSize="20"> Dodaj Więźnia</Button>
         
     </Grid>
 </UserControl>

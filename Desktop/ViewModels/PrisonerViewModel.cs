@@ -27,12 +27,14 @@ namespace Desktop.ViewModels
         {
             _prisonerEndpoint = prisonerEndpoint;
             _eventAggregator = eventAggregator;
+            _eventAggregator.Subscribe(this);
         }
 
         private async Task LoadPrisoners()
         {
             var prisonersList = await _prisonerEndpoint.AllPrisoner();
             AllPrisoner = new BindingList<Prisoner>(prisonersList);
+
         }
 
         protected override async void OnViewLoaded(object view)
@@ -69,6 +71,7 @@ namespace Desktop.ViewModels
 
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
             _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(prisoner));
+            _eventAggregator.PublishOnUIThread(new UserPermisionEventModel(role));
 
         }
 
@@ -80,7 +83,5 @@ namespace Desktop.ViewModels
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddPrisonerViewModel)));
             }
         }
-
-
     }
 }

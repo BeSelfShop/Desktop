@@ -85,6 +85,10 @@ namespace Desktop.ViewModels
         {
             _getPrisoner = message.SelectedPrisoner;
         }
+        public void Handle(UserPermisionEventModel message)
+        {
+            role = message._Roles;
+        }
 
         public Prisoner GetPrisoner
         {
@@ -165,7 +169,7 @@ namespace Desktop.ViewModels
         }
         public void AddPunishment()
         {
-            if (role == "Admin")
+            if ((role == "Admin")&& (GetPunishment == null))
             {
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddPunishmentViewModel)));
                 _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
@@ -174,7 +178,7 @@ namespace Desktop.ViewModels
         }
         public void UpdatePunishment()
         {
-            if (role == "Admin")
+            if ((role == "Admin")&&(GetPunishment != null))
             {
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(UpdatePunishmentViewModel)));
                 _eventAggregator.PublishOnUIThread(new SelectedPunishmentEventModel(_getPunishment));
@@ -184,14 +188,16 @@ namespace Desktop.ViewModels
         
         public void UpdatePass()
         {
-            if (role == "Admin")
+            if (GetPass != null)
             {
-
+                _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(UpdatePassViewModel)));
+                _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
+                _eventAggregator.PublishOnUIThread(new SelectedPassEventModel(_getPass));
             }
         }
         public void AddPass()
         {
-            if (role == "Admin")
+            if (GetPass == null)
             {
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddPassViewModel)));
                 _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
@@ -200,29 +206,32 @@ namespace Desktop.ViewModels
         }
         public void DeletePass()
         {
-            if (role == "Admin")
+            if (GetPass == null)
             {
                 _passEndpoint.DeletePass(GetPass.Id);
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
                 _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
             }
-
         }
         public void AddIsolation()
         {
-            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddIsolationViewModel)));
-            _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
+            if(GetIsolation == null)
+            {
+                _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddIsolationViewModel)));
+                _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
+            }
         }
         public void DeleteIsolation()
         {
-            _isolationEndpoint.DeleteIsolation(GetIsolation.Id);
-            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
-            _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
+            if (GetIsolation != null)
+            {
+                _isolationEndpoint.DeleteIsolation(GetIsolation.Id);
+                _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
+                _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
+            }
+
         }
 
-        public void Handle(UserPermisionEventModel message)
-        {
-            role = message._Roles;
-        }
+
     }
 }

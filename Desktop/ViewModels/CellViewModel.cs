@@ -23,7 +23,6 @@ namespace Desktop.ViewModels
             _cellEndpoint = cellEndpoint ;
             _eventAggregator = eventAggregator;
         }
-
         private async Task LoadCells()
         {
             var cellList = await _cellEndpoint.AllCell();
@@ -58,9 +57,10 @@ namespace Desktop.ViewModels
         {
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddCellViewModel)));
         }
-        public void UpdateCell()
+        public void UpdateCell(Cell cell)
         {
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(UpdateCellViewModel)));
+            _eventAggregator.PublishOnUIThread(new SelectedCellEventModel(cell));
         }
 
 

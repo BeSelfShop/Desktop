@@ -56,6 +56,7 @@ namespace Desktop.ViewModels
             {
                 _name = value;
                 NotifyOfPropertyChange(() => Name);
+                NotifyOfPropertyChange(() => CanAddPrisoner);
             }
 
         }
@@ -67,6 +68,7 @@ namespace Desktop.ViewModels
             {
                 _forname = value;
                 NotifyOfPropertyChange(() => Forname);
+                NotifyOfPropertyChange(() => CanAddPrisoner);
             }
         }
 
@@ -77,7 +79,7 @@ namespace Desktop.ViewModels
             {
                 _pesel = value;
                 NotifyOfPropertyChange(() => Pesel);
-
+                NotifyOfPropertyChange(() => CanAddPrisoner);
             }
 
         }
@@ -89,7 +91,7 @@ namespace Desktop.ViewModels
             {
                 _addres = value;
                 NotifyOfPropertyChange(() => Addres);
-
+                NotifyOfPropertyChange(() => CanAddPrisoner);
             }
 
         }
@@ -101,7 +103,7 @@ namespace Desktop.ViewModels
             {
                 _behavior = value;
                 NotifyOfPropertyChange(() => Behavior);
-
+                NotifyOfPropertyChange(() => CanAddPrisoner);
             }
 
         }
@@ -113,7 +115,7 @@ namespace Desktop.ViewModels
             {
                 _cells = value;
                 NotifyOfPropertyChange(() => Cells);
-
+                NotifyOfPropertyChange(() => CanAddPrisoner);
             }
 
         }
@@ -125,6 +127,7 @@ namespace Desktop.ViewModels
             {
                 _cell = value;
                 NotifyOfPropertyChange(() => SelectedCell);
+                NotifyOfPropertyChange(() => CanAddPrisoner);
 
             }
         }
@@ -134,7 +137,7 @@ namespace Desktop.ViewModels
             {
                 bool output = false;
 
-                if ((Name.Length > 0) && (Forname.Length > 0) && (Pesel.Length > 0) && (Addres.Length > 0) && (Behavior > 0) && (SelectedCell.BedsCount > 0))
+                if ((Name.Length > 0) && (Forname.Length > 0) && (Pesel.Length > 0) && (Addres.Length > 0) && (Behavior > 0) && (SelectedCell.BedsCount != 0))
                 {
                     output = true;
                 }
@@ -158,7 +161,7 @@ namespace Desktop.ViewModels
             prisoner.Isolated = false;
             prisoner.IdCell = SelectedCell.Id;
             _prisonerEndpoint.AddPrisoner(prisoner);
-            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(AddPunishmentViewModel)));
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(PrisonerViewModel)));
         }
     }
 }

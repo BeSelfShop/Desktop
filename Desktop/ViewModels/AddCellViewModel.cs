@@ -48,6 +48,7 @@ namespace Desktop.ViewModels
             {
                 _cellNumber = value;
                 NotifyOfPropertyChange(() => CellNumber);
+                NotifyOfPropertyChange(() => CanAddPrisoner);
 
             }
 
@@ -59,6 +60,7 @@ namespace Desktop.ViewModels
             {
                 _bedsCount = value;
                 NotifyOfPropertyChange(() => BedsCount);
+                NotifyOfPropertyChange(() => CanAddPrisoner);
 
             }
 
@@ -71,6 +73,7 @@ namespace Desktop.ViewModels
             {
                 _cellTypes = value;
                 NotifyOfPropertyChange(() => CellTypes);
+                NotifyOfPropertyChange(() => CanAddPrisoner);
             }
 
         }
@@ -81,8 +84,24 @@ namespace Desktop.ViewModels
             {
                 _cellType = value;
                 NotifyOfPropertyChange(() => SelectedCellType);
+                NotifyOfPropertyChange(() => CanAddPrisoner);
+            }
+        }
+        public bool CanAddPrisoner
+        {
+            get
+            {
+                bool output = false;
+
+                if ((CellNumber.Length > 0) && (BedsCount > 0) && (SelectedCellType != null) )
+                {
+                    output = true;
+                }
+
+                return output;
 
             }
+
         }
 
         public void AddCell()

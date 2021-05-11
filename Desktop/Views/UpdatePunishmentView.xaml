@@ -25,7 +25,7 @@
                     FontSize="45" Margin="0 0 0 20 ">
             Edytuj kare
             </TextBlock>
-        <StackPanel Grid.Row="2" Grid.Column="1">
+        <StackPanel Grid.Row="2" Grid.Column="1" DataContext="{Binding GetPunishment}">
             <StackPanel Orientation="Horizontal">
                 <TextBlock  HorizontalAlignment="Left"  FontSize="20" Margin="0 0 50 20 " >
                 Data rozpoczęcia

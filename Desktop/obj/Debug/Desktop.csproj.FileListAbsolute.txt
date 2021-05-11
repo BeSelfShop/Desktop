@@ -125,3 +125,9 @@ D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\LoggerView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\LoggerView.baml
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\InvitationView.g.cs
 D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\InvitationView.baml
+D:\KurortWiezienny\Desktop\Desktop\bin\Debug\Desktop.exe.manifest
+D:\KurortWiezienny\Desktop\Desktop\bin\Debug\Desktop.application
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Desktop.exe.manifest
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Desktop.application
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePassView.g.cs
+D:\KurortWiezienny\Desktop\Desktop\obj\Debug\Views\UpdatePassView.baml

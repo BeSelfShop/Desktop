@@ -10,5 +10,6 @@ namespace Desktop.Api.Endpoints
         Task<List<Cell>> AllCell();
         Task DeleteCell (int idCell);
         Task<Cell> SelectedCell(int idCell);
+        Task UpdateCell(int idCell, Cell cell);
     }
 }

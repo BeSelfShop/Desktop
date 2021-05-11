@@ -55,11 +55,8 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" DataContext="{Binding GetPunishment }">
                     <TextBlock Text="Data zakończenia: " FontSize="16"/>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding EndDate}" FontSize="16" Visibility="{Binding EndDateCancel, Converter={StaticResource VisibilityOfBool}, FallbackValue=Hidden}"/>
-                        <TextBlock Text="Dożywicie" FontSize="16" Visibility="{Binding LiferyCancel, Converter={StaticResource VisibilityOfBool}, FallbackValue=Hidden}"/>
+                    <TextBlock Text="{Binding EndDate}" FontSize="16" />
                     </StackPanel>
-                </StackPanel>
                 <StackPanel Orientation="Horizontal" DataContext="{Binding GetReason}">
                     <TextBlock Text="Powód: " FontSize="16"/>
                     <TextBlock  Text="{Binding  ReasonName }" FontSize="16"/>

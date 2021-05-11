@@ -17,6 +17,7 @@ namespace Desktop.ViewModels
         private string _password = "";
         private IApiHelper _apiHelper;
         private IEventAggregator _eventAggregator;
+        
 
         public LoginViewModel(IApiHelper apiHelper, IEventAggregator eventAggregator)
         {
@@ -66,6 +67,7 @@ namespace Desktop.ViewModels
             
         }
 
+
         public async Task Login()
         {
             try
@@ -73,10 +75,8 @@ namespace Desktop.ViewModels
 
                 var result = await _apiHelper.Authenticate(UserName, Password);
                 _apiHelper.Authorized(result.Token);
-                _eventAggregator.PublishOnUIThread(new LogOnEventModel());
-                
-
-
+                _eventAggregator.PublishOnUIThread(new UserPermisionEventModel(result.Roles));
+                _eventAggregator.PublishOnUIThread(new LogOnEventModel());             
             }
             catch (Exception e)
             {

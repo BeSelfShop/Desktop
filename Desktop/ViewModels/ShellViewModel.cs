@@ -11,7 +11,7 @@ using Desktop.Views;
 
 namespace Desktop.ViewModels
 {
-    public class ShellViewModel : Conductor<object>, IHandle<LogOnEventModel>, IHandle<NextPageEventModel>, IHandle<UserPermisionEventModel>
+    public class ShellViewModel : Conductor<object>, IHandle<UserPermisionEventModel>, IHandle<LogOnEventModel>, IHandle<NextPageEventModel> 
     {
         //private LoginViewModel _loginViewModel;
         private IEventAggregator _eventAggregator;
@@ -35,10 +35,12 @@ namespace Desktop.ViewModels
             if(role == "Admin")
             {
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(HomeViewModel)));
+                _eventAggregator.PublishOnUIThread(new UserPermisionEventModel(role));
             }
             else
             {
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(PrisonerViewModel)));
+                _eventAggregator.PublishOnUIThread(new UserPermisionEventModel(role));
             }
             
         }
@@ -58,6 +60,7 @@ namespace Desktop.ViewModels
             if (role == "Admin")
             {
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(HomeViewModel)));
+                _eventAggregator.PublishOnUIThread(new UserPermisionEventModel(role));
             }
             
         }
@@ -66,6 +69,7 @@ namespace Desktop.ViewModels
             if (role == "Admin")
             {
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(InvitationViewModel)));
+                _eventAggregator.PublishOnUIThread(new UserPermisionEventModel(role));
             }            
         }
     }

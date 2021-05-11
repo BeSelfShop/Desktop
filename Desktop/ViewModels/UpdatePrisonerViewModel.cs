@@ -146,15 +146,30 @@ namespace Desktop.ViewModels
         }
 
 
-        public void AddPrisoner()
+        public void UpdatePrisoner()
         {
-            Prisoner prisoner = new Prisoner();
+            Prisoner prisoner;
             prisoner = _prisoner;
-            prisoner.Name = PrisonerName;
-            prisoner.Forname = PrisonerForname;
-            prisoner.Pesel = PrisonerPesel;
-            prisoner.Address = PrisonerAddress;
-            prisoner.Behavior = PrisonerBehavior;
+            if (PrisonerName != null)
+            {
+                prisoner.Name = PrisonerName;
+            }
+            if (PrisonerForname != null)
+            {
+                prisoner.Forname = PrisonerForname;
+            }
+            if (PrisonerPesel != null)
+            {
+                prisoner.Pesel = PrisonerPesel;
+            }
+            if (PrisonerAddress != null)
+            {
+                prisoner.Address = PrisonerAddress;
+            }
+            if (PrisonerBehavior != 0)
+            {
+                prisoner.Behavior = PrisonerBehavior;
+            }
             prisoner.IdCell = SelectedCell.Id;
             _prisonerEndpoint.UpdatePrisoner(prisoner.Id, prisoner);
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));

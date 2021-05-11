@@ -1,0 +1,106 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\KurortWiezienny\\Desktop\\DesktopTest\\DesktopTest.csproj": {}
+  },
+  "projects": {
+    "D:\\KurortWiezienny\\Desktop\\DesktopTest\\DesktopTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\KurortWiezienny\\Desktop\\DesktopTest\\DesktopTest.csproj",
+        "projectName": "DesktopTest",
+        "projectPath": "D:\\KurortWiezienny\\Desktop\\DesktopTest\\DesktopTest.csproj",
+        "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
+        "outputPath": "D:\\KurortWiezienny\\Desktop\\DesktopTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\KurortWiezienny\\Desktop\\Desktop\\Desktop.csproj": {
+                "projectPath": "D:\\KurortWiezienny\\Desktop\\Desktop\\Desktop.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Caliburn.Micro.Core": {
+              "target": "Package",
+              "version": "[4.0.173, )"
+            },
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.7.1, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.2, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\KurortWiezienny\\Desktop\\Desktop\\Desktop.csproj": {
+      "restore": {
+        "projectUniqueName": "D:\\KurortWiezienny\\Desktop\\Desktop\\Desktop.csproj",
+        "projectName": "Desktop",
+        "projectPath": "D:\\KurortWiezienny\\Desktop\\Desktop\\Desktop.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

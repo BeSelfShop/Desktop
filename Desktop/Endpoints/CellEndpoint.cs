@@ -61,5 +61,11 @@ namespace Desktop.Endpoints
 
             }
         }
+        public async Task UpdateCell(int idCell, Cell cell)
+        {
+            var json = JsonConvert.SerializeObject(cell);
+            var stringContent = new StringContent(json, UnicodeEncoding.UTF8, "application/json");
+            HttpResponseMessage responseMessage = await _apiHelper.ApiClient.PutAsync("api/PCells/" + idCell, stringContent);
+        }
     }
 }

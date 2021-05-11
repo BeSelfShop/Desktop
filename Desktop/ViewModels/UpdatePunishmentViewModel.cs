@@ -46,6 +46,15 @@ namespace Desktop.ViewModels
         {
             _getPunishment = message.SelectedPunishment;
         }
+        public Punishment GetPunishment
+        {
+            get { return _getPunishment; }
+            set
+            {
+                _getPunishment = value;
+                NotifyOfPropertyChange(() => GetPunishment);
+            }
+        }
 
         public DateTime StartDate
         {
@@ -104,10 +113,19 @@ namespace Desktop.ViewModels
         public void UpdatePunishment()
         {
             Punishment punishment = new Punishment();
-            punishment.StartDate = StartDate;
-            punishment.EndDate = EndDate;
-            punishment.Lifery = Lifery;
-            punishment.IdReason = SelectedReason.Id;
+            punishment = _getPunishment;
+            if(EndDate != null)
+            {
+                punishment.EndDate = EndDate;
+            }
+            if (Lifery)
+            {
+                punishment.Lifery = Lifery;
+            }
+            if (SelectedReason != null)
+            {
+                punishment.IdReason = SelectedReason.Id;
+            }
             _punishmentEndpoint.UpdatePunishment(punishment.Id, punishment);
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
         }
