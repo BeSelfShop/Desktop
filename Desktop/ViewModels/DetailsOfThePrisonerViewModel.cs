@@ -181,6 +181,7 @@ namespace Desktop.ViewModels
             if ((role == "Admin")&&(GetPunishment != null))
             {
                 _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(UpdatePunishmentViewModel)));
+                _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(_getPrisoner));
                 _eventAggregator.PublishOnUIThread(new SelectedPunishmentEventModel(_getPunishment));
             }
 

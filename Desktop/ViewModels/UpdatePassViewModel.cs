@@ -78,6 +78,11 @@ namespace Desktop.ViewModels
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
             _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(prisoner));
         }
+        public void Back()
+        {
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
+            _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(prisoner));
+        }
     }
 }
 

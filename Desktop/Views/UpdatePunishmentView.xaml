@@ -65,6 +65,9 @@
             
        
         <Button x:Name="UpdatePunishment" Grid.Row="3" Grid.Column="1" Width="100" Height="30" >Edytuj</Button>
+        <Button x:Name="Back" Grid.Row="4" Grid.Column="1" Width="100" Height="30" HorizontalAlignment="Left">
+            Powrót</Button>
+
 
     </Grid>
 </UserControl>

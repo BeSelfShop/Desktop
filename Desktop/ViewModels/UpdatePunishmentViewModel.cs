@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Desktop.ViewModels
 {
-    public class UpdatePunishmentViewModel : Screen, IHandle<SelectedPunishmentEventModel>
+    public class UpdatePunishmentViewModel : Screen, IHandle<SelectedPunishmentEventModel>, IHandle<SelectedPrisonerEventModel>
     {
         private IEventAggregator _eventAggregator;
         private BindingList<Reason> _reasons;
@@ -22,6 +22,8 @@ namespace Desktop.ViewModels
         private IPunishmentEndpoint _punishmentEndpoint;
         private Reason _selectedReason;
         private Punishment _getPunishment;
+        private Prisoner prisoner;
+
 
         public UpdatePunishmentViewModel(IEventAggregator eventAggregator, IReasonEndpoint reasonEndpoint, IPunishmentEndpoint punishmentEndpoint)
         {
@@ -45,6 +47,10 @@ namespace Desktop.ViewModels
         public void Handle(SelectedPunishmentEventModel message)
         {
             _getPunishment = message.SelectedPunishment;
+        }
+        public void Handle(SelectedPrisonerEventModel message)
+        {
+            prisoner = message.SelectedPrisoner;
         }
         public Punishment GetPunishment
         {
@@ -128,6 +134,11 @@ namespace Desktop.ViewModels
             }
             _punishmentEndpoint.UpdatePunishment(punishment.Id, punishment);
             _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
+        }
+        public void Back()
+        {
+            _eventAggregator.PublishOnUIThread(new NextPageEventModel(typeof(DetailsOfThePrisonerViewModel)));
+            _eventAggregator.PublishOnUIThread(new SelectedPrisonerEventModel(prisoner));
         }
     }
 }

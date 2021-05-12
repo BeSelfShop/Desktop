@@ -44,8 +44,11 @@
         <DatePicker x:Name="EndDate" Grid.Row="3" Grid.Column="2" Width="200" Height="20" Margin="0 0 0 20 "
                     SelectedDate="{x:Static sys:DateTime.Now}"/>
 
-        <Button x:Name="UpdatePass" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="20"  >
+        <Button x:Name="UpdatePass" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" FontSize="20"  >
             Edytuj Przepustkę
+        </Button>
+        <Button x:Name="Back" Grid.Row="4" Grid.Column="1"  HorizontalAlignment="Center" FontSize="20"  >
+            Powrót
         </Button>
     </Grid>
 </UserControl>
